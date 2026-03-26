@@ -2,15 +2,22 @@
 #define LISTA_ITINERARIO_H
 
 struct Node {
-    int conteudo;
+    string nomeParada;
     Node* proximo;
     Node* anterior;
 };
 
 struct ListaDuplamenteEncadeada {
-    int cardinalidade;
     Node* inicio;
-    Node* fim;    
+    Node* fim;
+    int totalParadas;
 };
+
+ListaDuplamenteEncadeada* criaLista();
+void insereInicio(ListaDuplamenteEncadeada &lista, string nome);
+void insereFim(ListaDuplamenteEncadeada &lista, string nome);
+void inserePorNome(ListaDuplamenteEncadeada &lista, string nomeBusca, string novoNome);
+
+
 
 #endif
