@@ -73,3 +73,41 @@ void inserePorNome(ListaDuplamenteEncadeada &lista, string nomeBusca, string nov
     atual->proximo = novoNode;
     lista.totalParadas++;
 }
+
+void removerInicio(ListaDuplamenteEncadeada &lista) {
+    if (lista.inicio == NULL) {
+        cout << "A rota está vazia" << endl;
+        return;
+    }
+
+    Node* alvo = lista.inicio;
+    lista.inicio = lista.inicio->proximo;
+
+    if (lista.inicio != NULL) {
+        lista.inicio->anterior = NULL;
+    } else {
+        lista.fim = NULL;
+    }
+
+    delete alvo;
+    lista.totalParadas--;
+}
+
+void removerFim(ListaDuplamenteEncadeada &lista){
+    if (lista.fim == NULL) {
+        cout << "A rota está vazia" << endl;
+    }
+
+    Node* alvo = lista.fim;
+    lista.fim = lista.fim->anterior;
+
+    if (lista.fim != NULL) {
+        lista.fim->proximo = NULL;
+    } else {
+        lista.inicio = NULL;
+    }
+
+    delete alvo;
+    lista.totalParadas--;
+}
+
