@@ -17,7 +17,7 @@ int main () {
 
     do
     {
-        cout << "\n--- MENU DO ONIBUS ---" << endl;
+        cout << "\n-----   MENU DO ONIBUS   -----" << endl;
         cout << "1. Inserir parada no início" << endl;
         cout << "2. Inserir parada no fim" << endl;
         cout << "3. Inserir parada por posição" << endl;
@@ -28,26 +28,24 @@ int main () {
         cout << "8. Listar rota inversa (trajeto de volta)" << endl;
         cout << "9. Contar paradas" << endl;
         cout << "0. Sair" << endl;
-        cout << "Escolha uma opcao: ";
+        cout << "\nEscolha uma opcao: ";
         cin >> opcao;
+        cin.ignore();
 
         switch (opcao)
         {
         case 1:
             cout << "Informe o nome da nova parada: ";
-            cin.ignore();
             getline(cin, novoNome);
             insereInicio(minhaRota, novoNome);
             break;
         case 2:
             cout << "Informe o nome da nova parada: ";
-            cin.ignore();
             getline(cin, novoNome);
             insereFim(minhaRota, novoNome);
             break;
         case 3:
             cout << "Informe o nome da parada imediatamente anterior a nova parada: ";
-            cin.ignore();
             getline(cin, nomeBusca);
             cout << "Informe o nome da nova parada: ";
             getline(cin, novoNome);
@@ -61,7 +59,6 @@ int main () {
             break;
         case 6:
             cout << "Informe o nome da parada: ";
-            cin.ignore();
             getline(cin, nomeBusca);
             buscarPorNome(minhaRota, nomeBusca);
             break;
@@ -81,6 +78,12 @@ int main () {
             cout << "Digite uma opção válida!" << endl;
             break;
         }
+
+        if (opcao != 0) {
+            cout << "\nPressione Enter para retornar ao Menu..." ;
+            cin.get();
+        }
+
     } while (opcao != 0);
     
     

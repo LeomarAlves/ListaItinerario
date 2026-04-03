@@ -7,7 +7,7 @@ using namespace std;
 
 ListaDuplamenteEncadeada* criaLista()
 {
-    ListaDuplamenteEncadeada* lista = (ListaDuplamenteEncadeada*) malloc(sizeof(ListaDuplamenteEncadeada));
+    ListaDuplamenteEncadeada* lista = new ListaDuplamenteEncadeada;
     lista->totalParadas = 0;
     lista->inicio = NULL;
     lista->fim = NULL;
