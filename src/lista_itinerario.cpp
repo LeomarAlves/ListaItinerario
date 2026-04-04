@@ -118,36 +118,6 @@ void removerFim(ListaDuplamenteEncadeada &lista){
     cout << "Parada removida com sucesso!";
 }
 
-void removerPorNome(ListaDuplamenteEncadeada &lista, string nomeBusca) {
-    Node* atual = lista.inicio;
-
-    while (atual != NULL && atual->nomeParada != nomeBusca) {
-        atual = atual->proximo;
-    }
-    
-    if (atual == NULL) {
-        cout << "Parada não encontrada" << endl;
-        return;
-    }
-
-    if (atual->proximo != NULL) {
-        atual->proximo->anterior = atual->anterior;
-    } else {
-        lista.fim = atual->anterior;
-    }
-
-    if (atual->anterior != NULL) {
-        atual->anterior->proximo = atual->proximo;
-    } else {
-        lista.inicio = atual->proximo;
-    }
-
-    delete atual;
-    lista.totalParadas--;
-
-    cout << "Parada " << nomeBusca << " removida com sucesso!" << endl;
-}
-
 void imprimirIda(ListaDuplamenteEncadeada lista) {
     Node* atual = lista.inicio;
 
@@ -180,7 +150,7 @@ void buscarPorNome(ListaDuplamenteEncadeada lista, string nomeBusca) {
 
     while (atual != NULL) {
         if (atual->nomeParada.find(nomeBusca) != string::npos) {
-        cout << atual->nomeParada << endl;
+        cout <<"Parada: " << atual->nomeParada << " encontrada."<< endl;
         encontrou = true;
         }
         atual = atual->proximo;
@@ -189,3 +159,5 @@ void buscarPorNome(ListaDuplamenteEncadeada lista, string nomeBusca) {
             cout << "Parada não encontrada!" << endl;
         }
 }
+
+
