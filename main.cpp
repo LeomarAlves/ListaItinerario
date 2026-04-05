@@ -6,11 +6,7 @@ using namespace std;
 
 int main () {
 
-    ListaDuplamenteEncadeada minhaRota;
-
-    minhaRota.inicio = NULL;
-    minhaRota.fim = NULL;
-    minhaRota.totalParadas = 0;
+    ListaDuplamenteEncadeada* minhaRota = criaLista();
 
     int opcao;
     string nomeBusca, novoNome;
@@ -37,39 +33,39 @@ int main () {
         case 1:
             cout << "Informe o nome da nova parada: ";
             getline(cin, novoNome);
-            insereInicio(minhaRota, novoNome);
+            insereInicio(*minhaRota, novoNome);
             break;
         case 2:
             cout << "Informe o nome da nova parada: ";
             getline(cin, novoNome);
-            insereFim(minhaRota, novoNome);
+            insereFim(*minhaRota, novoNome);
             break;
         case 3:
             cout << "Informe o nome da parada imediatamente anterior a nova parada: ";
             getline(cin, nomeBusca);
             cout << "Informe o nome da nova parada: ";
             getline(cin, novoNome);
-            inserePorNome(minhaRota, nomeBusca, novoNome);
+            inserePorNome(*minhaRota, nomeBusca, novoNome);
             break;
         case 4:
-            removerInicio(minhaRota);
+            removerInicio(*minhaRota);
             break;
         case 5:
-            removerFim(minhaRota);
+            removerFim(*minhaRota);
             break;
         case 6:
             cout << "Informe o nome da parada: ";
             getline(cin, nomeBusca);
-            buscarPorNome(minhaRota, nomeBusca);
+            buscarPorNome(*minhaRota, nomeBusca);
             break;
         case 7:
-            imprimirIda(minhaRota);
+            imprimirIda(*minhaRota);
             break;
         case 8:
-            imprimirVolta(minhaRota);
+            imprimirVolta(*minhaRota);
             break;
         case 9:
-            imprimeTotalParadas(minhaRota);
+            imprimeTotalParadas(*minhaRota);
             break;
         case 0:
             cout << "Encerrando o sistema..." << endl;
@@ -89,3 +85,4 @@ int main () {
     
     return 0;
 }
+

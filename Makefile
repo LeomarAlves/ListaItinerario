@@ -11,7 +11,7 @@ endif
 
 # Flags de compilação
 CXX = g++
-CXXFLAGS = -I include
+CXXFLAGS = -I include -g
 
 # 2. Regra para o Programa Principal
 build:

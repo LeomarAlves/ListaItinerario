@@ -50,6 +50,60 @@ Para remover os arquivos e manter a pasta limpa:
 ```
 make clean
 ```
+
+## 🐛 Depuração (Debugging)
+### Via VSCode (Interface Gráfica)
+**O projeto está configurado com os arquivos .vscode/tasks.json e .vscode/launch.json.**
+
+1. Abra a pasta do projeto no VSCode.
+
+2. Coloque breakpoints clicando na margem esquerda do código (ex: na função insereInicio).
+
+3. Pressione F5 ou acesse a aba Run and Debug e clique em "(gdb) Iniciar Ônibus".
+
+4. O VSCode utilizará o Makefile para compilar o projeto com símbolos de debug (-g) automaticamente.
+
+### Via CLI (Terminal com GDB)
+1. Compilar com símbolos de debug:
+
+    ```
+    make clean
+    make build
+    ```
+
+2. Iniciar o GDB:
+
+    ```
+    gdb ./onibus
+    ```
+3. Comandos básicos do GDB:
+
+    * break [função]: Define um ponto de parada (ex: break main).
+
+    * run (ou r): Inicia a execução do programa.
+
+    * next (ou n): Executa a próxima linha de código (pula funções).
+
+    * step (ou s): Entra em uma função.
+
+    * print <variavel> (ou p): Exibe o valor de uma variável (ex: p *minhaRota).
+
+    * continue (ou c): Continua a execução até o próximo breakpoint.
+
+    * quit (ou q): Sai do GDB.
+
+4. Fluxo de Exemplo (Inspecionando a Rota): 
+
+    ```
+    (gdb) break main
+    (gdb) run
+    (gdb) next
+    (gdb) next
+    (gdb) print minhaRota
+    (gdb) print *minhaRota
+    (gdb) quit
+    ```
+
 ## 🛠️ Tecnologias Utilizadas
 
 * Linguagem: C++
