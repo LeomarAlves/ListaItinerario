@@ -160,4 +160,26 @@ void buscarPorNome(ListaDuplamenteEncadeada lista, string nomeBusca) {
         }
 }
 
+void destroiLista(ListaDuplamenteEncadeada* lista) {
+    if (lista == NULL || lista->inicio == NULL) {
+        delete lista;
+        return;
+    }
+
+    Node* atual = lista->inicio;
+    Node* proximoNode;
+
+    while (atual != NULL) {
+        proximoNode = atual->proximo; 
+        delete atual;                 
+        atual = proximoNode;          
+    }
+
+    lista->inicio = nullptr;
+    lista->fim = nullptr;
+    lista->totalParadas = 0;
+
+    delete lista; 
+}
+
 

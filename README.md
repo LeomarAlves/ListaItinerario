@@ -10,6 +10,7 @@ O sistema do ônibus é capaz de:
 * **Buscar Paradas:** Procurar por uma parada específica pelo nome.
 * **Visualizar Trajeto:** Imprimir a rota completa no sentido de ida (início ao fim) e no sentido de volta (fim ao início).
 * **Contagem:** Manter um registro atualizado do total de paradas na rota.
+* **Liberação de Memória:** Função para percorrer a lista e desalocar todos os nós, evitando memory leaks.
 
 ## 📂 Estrutura do Projeto
 
@@ -120,6 +121,8 @@ make clean
 * Modularização: Separação entre interface (.h), implementação (.cpp) e testes.
 
 * Automação: Criação de Makefiles multiplataforma.
+
+* Gestão de Ciclo de Vida: Implementação de funções de limpeza para garantir a integridade da memória RAM.
 
 ## 📝 Justificativas Técnicas
 

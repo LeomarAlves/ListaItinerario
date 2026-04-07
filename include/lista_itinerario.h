@@ -26,5 +26,6 @@ void imprimirIda(ListaDuplamenteEncadeada lista);
 void imprimirVolta(ListaDuplamenteEncadeada lista);
 void imprimeTotalParadas(ListaDuplamenteEncadeada lista);
 void buscarPorNome(ListaDuplamenteEncadeada lista, string nomeBusca);
+void destroiLista(ListaDuplamenteEncadeada* lista);
 
 #endif
