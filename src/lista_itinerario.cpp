@@ -102,6 +102,7 @@ void removerInicio(ListaDuplamenteEncadeada &lista) {
 void removerFim(ListaDuplamenteEncadeada &lista){
     if (lista.fim == NULL) {
         cout << "A rota está vazia" << endl;
+        return;
     }
 
     Node* alvo = lista.fim;
